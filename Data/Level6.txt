@@ -2,4 +2,4 @@
 5
 10
 25
-Images\\OrangeBackground.png
+Images/OrangeBackground.png

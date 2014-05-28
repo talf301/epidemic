@@ -2,4 +2,4 @@
 4
 10
 25
-Images\\SwirlBackground.png
+Images/SwirlBackground.png

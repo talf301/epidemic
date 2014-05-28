@@ -1,6 +1,6 @@
 import java.awt.Graphics2D;
 import java.util.Random;
-
+import java.io.*;
 
 public class Bacteria extends Cell
 {
@@ -144,7 +144,8 @@ public class Bacteria extends Cell
 		for(Bacteria b:getGameState().getBouncingBacteria())
 		{
 			if(b != this && this.isColliding(b))
-			{f
+			{
+                double angleBetweenCells = Mathbot.getAngle(b.getPosX(),b.getPosY(),this.getPosX(),this.getPosY());
 				double angleLineOfReflection = Mathbot.toNiceAngle(Math.PI/2 + angleBetweenCells);
 				
 				this.setAngle(angleLineOfReflection + (angleLineOfReflection - this.getAngle()));
@@ -178,17 +179,17 @@ public class Bacteria extends Cell
 		switch(color)
 		{
 		case Bacteria.BLUE:
-			return "Images\\Blue.png";
+			return "Images" + File.separator + "Blue.png";
 		case Bacteria.GREEN:
-			return "Images\\Green.png";
+			return "Images" + File.separator + "Green.png";
 		case Bacteria.ORANGE:
-			return "Images\\Orange.png";
+			return "Images" + File.separator + "Orange.png";
 		case Bacteria.PURPLE:
-			return "Images\\Purple.png";
+			return "Images" + File.separator + "Purple.png";
 		case Bacteria.RED:
-			return "Images\\Red.png";
+			return "Images" + File.separator + "Red.png";
 		case Bacteria.YELLOW:
-			return "Images\\Yellow.png";
+			return "Images" + File.separator + "Yellow.png";
 		default:
 				return null;
 		}
@@ -199,17 +200,17 @@ public class Bacteria extends Cell
 		switch(color)
 		{
 		case Bacteria.BLUE:
-			return "Images\\BlueGoo.png";
+			return "Images" + File.separator + "BlueGoo.png";
 		case Bacteria.GREEN:
-			return "Images\\GreenGoo.png";
+			return "Images" + File.separator + "GreenGoo.png";
 		case Bacteria.ORANGE:
-			return "Images\\OrangeGoo.png";
+			return "Images" + File.separator + "OrangeGoo.png";
 		case Bacteria.PURPLE:
-			return "Images\\PurpleGoo.png";
+			return "Images" + File.separator + "PurpleGoo.png";
 		case Bacteria.RED:
-			return "Images\\RedGoo.png";
+			return "Images" + File.separator + "RedGoo.png";
 		case Bacteria.YELLOW:
-			return "Images\\YellowGoo.png";
+			return "Images" + File.separator + "YellowGoo.png";
 		default:
 				return null;
 		}

@@ -2,4 +2,4 @@
 2
 10
 25
-Images\\BlueBackground.png
+Images/BlueBackground.png

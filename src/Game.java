@@ -142,11 +142,11 @@ public class Game extends JPanel{
 		levels = new ArrayList<Level>();
 		for(int i = 1; ;i++)
 		{
-			File eff = new File(System.getProperty("user.dir") + "\\Data\\Level" + i + ".txt");
+			File eff = new File(System.getProperty("user.dir") +  File.separator + "Data" + File.separator + "Level" + i + ".txt");
 			
 			if(eff.exists())
 			{
-				levels.add(new Level(System.getProperty("user.dir") + "\\Data\\Level" + i + ".txt"));
+				levels.add(new Level(System.getProperty("user.dir") + File.separator + "Data" + File.separator + "Level" + i + ".txt"));
 			}
 			else
 			{
@@ -160,7 +160,7 @@ public class Game extends JPanel{
 		stickingBacteria = new ArrayList<Bacteria>();
 		dyingBacteria = new ArrayList<Bacteria> ();
 		gameState = new GameState(frame,super.getWidth(), super.getHeight(),bouncingBacteria, stickingBacteria, dyingBacteria, slurps, pows);
-		player = new Player(gameState, "Images\\LukeV2_1.png", 4, 500, 500);
+		player = new Player(gameState, "Images" + File.separator + "LukeV2_1.png", 4, 500, 500);
 		/* create initial bacteria at random locations */
 		for(int i = 0; i < levels.get(currentLevel).getNumInitialBacteria(); i++)
 		{
@@ -169,7 +169,7 @@ public class Game extends JPanel{
 		try
 		{
 		Clip clip = AudioSystem.getClip();
-		AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(System.getProperty("user.dir") + "\\Sound\\Music1.wav"));  
+		AudioInputStream inputStream = AudioSystem.getAudioInputStream(new File(System.getProperty("user.dir") + File.separator + "Sound" + File.separator + "Music1.wav"));
 		clip.open(inputStream); 
 		clip.loop(Clip.LOOP_CONTINUOUSLY);
 		}
@@ -182,10 +182,10 @@ public class Game extends JPanel{
 
 		for(int i = 1; ;i++)
 		{
-			File eff = new File(System.getProperty("user.dir") + "\\Sound\\Slurp" + i + ".wav");
+			File eff = new File(System.getProperty("user.dir") + File.separator + "Sound" + File.separator + "Slurp" + i + ".wav");
 			if(eff.exists())
 			{
-				slurps.add(System.getProperty("user.dir") + "\\Sound\\Slurp" + i + ".wav");
+				slurps.add(System.getProperty("user.dir") + File.separator + "Sound" + File.separator + "Slurp" + i + ".wav");
 			}
 			else
 			{
@@ -196,10 +196,10 @@ public class Game extends JPanel{
 		//pows
 		for(int i = 1; ;i++)
 		{
-			File eff = new File(System.getProperty("user.dir") + "\\Sound\\Pow" + i + ".wav");
+			File eff = new File(System.getProperty("user.dir") + File.separator + "Sound" + File.separator + "Pow" + i + ".wav");
 			if(eff.exists())
 			{
-				pows.add(System.getProperty("user.dir") + "\\Sound\\Pow" + i + ".wav");
+				pows.add(System.getProperty("user.dir") + File.separator + "Sound" + File.separator + "Pow" + i + ".wav");
 			}
 			else
 			{
@@ -209,8 +209,8 @@ public class Game extends JPanel{
 		
 		try
 		{
-			win = ImageIO.read(new File(System.getProperty("user.dir") + "\\" + "Images\\WIN.png"));
-			lose = ImageIO.read(new File(System.getProperty("user.dir") + "\\" + "Images\\LOSE.png"));
+			win = ImageIO.read(new File(System.getProperty("user.dir") + File.separator + "Images" + File.separator + "WIN.png"));
+			lose = ImageIO.read(new File(System.getProperty("user.dir") + File.separator + "Images" + File.separator + "LOSE.png"));
 		}catch(IOException e)
 		{
 			e.printStackTrace();
@@ -272,7 +272,8 @@ public class Game extends JPanel{
 	{
 		try
 		{
-			background = ImageIO.read(new File(System.getProperty("user.dir") + "\\" + levels.get(currentLevel).getBackdrop()));
+            System.out.println(System.getProperty("user.dir") + File.separator + levels.get(currentLevel).getBackdrop());
+			background = ImageIO.read(new File(System.getProperty("user.dir") + File.separator + levels.get(currentLevel).getBackdrop()));
 		}catch(IOException e)
 		{
 			e.printStackTrace();

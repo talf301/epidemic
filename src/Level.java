@@ -17,7 +17,7 @@ public class Level
 		numTypesOfBacteria = s.nextInt();
 		numInitialBacteria = s.nextInt();
 		maxScore = s.nextInt();
-		backdrop = s.next();
+		backdrop = s.next().replaceAll("/", File.separator);
 		}
 		catch(IOException e)
 		{

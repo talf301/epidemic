@@ -22,7 +22,7 @@ public class Cell
 		BufferedImage image;
 		try
 		{
-			image = ImageIO.read(new File(System.getProperty("user.dir") + "\\" + fileName));
+			image = ImageIO.read(new File(System.getProperty("user.dir") + File.separator + fileName));
 		}catch(IOException e)
 		{
 			e.printStackTrace();

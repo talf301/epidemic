@@ -17,7 +17,7 @@ public class Effect {
 		BufferedImage image;
 		try
 		{
-			image = ImageIO.read(new File(System.getProperty("user.dir") + "\\" + filePath));
+			image = ImageIO.read(new File(System.getProperty("user.dir") + File.separator + filePath));
 		}catch(IOException e)
 		{
 			e.printStackTrace();

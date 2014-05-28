@@ -2,4 +2,4 @@
 3
 10
 25
-Images\\GrayBackground.png
+Images/GrayBackground.png
